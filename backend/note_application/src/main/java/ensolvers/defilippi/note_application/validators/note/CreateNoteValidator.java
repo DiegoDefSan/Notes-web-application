@@ -1,7 +1,7 @@
 package ensolvers.defilippi.note_application.validators.note;
 
 import ensolvers.defilippi.note_application.exceptions.ValidationException;
-import ensolvers.defilippi.note_application.models.note.Note;
+import ensolvers.defilippi.note_application.models.Note;
 
 public final class CreateNoteValidator {
     private static final int maxTitleCharacters = 16;
@@ -21,6 +21,10 @@ public final class CreateNoteValidator {
 
         if (note.getDescription().length() > 64) {
             throw new ValidationException("Note description cannot exceed " + maxDescriptionCharacters + " characters");
+        }
+
+        if (note.getCategory() == null) {
+            throw new ValidationException("Category is required");
         }
     }
 }
