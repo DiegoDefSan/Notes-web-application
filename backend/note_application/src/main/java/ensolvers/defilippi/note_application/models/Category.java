@@ -1,6 +1,5 @@
-package ensolvers.defilippi.note_application.models.category;
+package ensolvers.defilippi.note_application.models;
 
-import ensolvers.defilippi.note_application.models.note.Note;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,4 +25,8 @@ public class Category {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL)
     private List<Note> noteList = new ArrayList<>();
+
+    public Category(String name) {
+        this.name = name;
+    }
 }
