@@ -1,6 +1,5 @@
-package ensolvers.defilippi.note_application.models.note;
+package ensolvers.defilippi.note_application.models;
 
-import ensolvers.defilippi.note_application.models.category.Category;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +26,7 @@ public class Note {
     @Column(name = "is_archived", nullable = false)
     private boolean isArchived = false;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 }
