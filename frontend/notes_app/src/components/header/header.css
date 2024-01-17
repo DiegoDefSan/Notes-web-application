@@ -1,0 +1,11 @@
+.header {
+  height: 80px;
+  background-color: var(--main-brown);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  color: var(--white-text);
+}
