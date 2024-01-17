@@ -1,0 +1,98 @@
+.popup-container {
+  position: fixed;
+  top: 0;
+  background-color: snow;
+  opacity: .90;
+  transition: .5s;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-container .popup-form-subcontainer {
+  background-color: var(--dark-gray);
+  border-radius: 20px;
+  width: 40%;
+  min-width: 400px;
+  max-width: 500px;
+  height: 80%;
+}
+
+.popup-container .popup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-container .popup-form .input-container {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle-input {
+  margin: 1.6rem 0 1rem 0;
+  font-weight: 400;
+}
+
+.popup-form .text-input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px .8rem;
+}
+
+.popup-form .input-container #categories-input {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  height: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.popup-form .input-container #categories-input label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  font-size: 1.1rem;
+}
+
+.btns-form {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-around !important;
+}
+
+.btn-form {
+  max-width: 400px;
+  padding: 1rem 2rem;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--main-brown);
+  cursor: pointer;
+  transition: .4s;
+}
+
+#btn-accept:hover {
+  background-color: var(--main-dark-brown);
+}
+
+#btn-cancel {
+  background-color: var(--light-gray);
+  color: #000;
+}
+
+#btn-cancel:hover {
+  background-color: var(--red-forbidden);
+  color: var(--snow);
+}
