@@ -14,26 +14,4 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
         LEFT OUTER JOIN FETCH n.category
     """)
     List<Note> selectNotes();
-
-    @Query("""
-        SELECT n
-        FROM Note n
-        LEFT OUTER JOIN FETCH n.category
-        WHERE n.category.id = :categoryId
-    """)
-    List<Note> selectNotesByCategoryId(Long categoryId);
-
-    @Query("""
-        SELECT n
-        FROM Note n
-        WHERE n.isArchived
-    """)
-    List<Note> selectArchivedNotes();
-
-    @Query("""
-        SELECT n
-        FROM Note n
-        WHERE NOT n.isArchived
-    """)
-    List<Note> selectUnarchivedNotes();
 }

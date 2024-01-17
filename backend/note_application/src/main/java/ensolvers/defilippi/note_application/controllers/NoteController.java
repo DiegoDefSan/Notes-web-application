@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("http://localhost:5173")
 @RestController
 @RequestMapping("/api/v1/notes") // http://localhost:8080//api/v1/notes
 public class NoteController {
@@ -24,29 +25,6 @@ public class NoteController {
     @GetMapping
     public ResponseEntity<List<NoteVm>> getNotes() {
         List<NoteVm> notesFromService = noteService.getNotes();
-
-        return new ResponseEntity<>(notesFromService, HttpStatus.OK);
-    }
-
-    @GetMapping("/category/{categoryId}")
-    public ResponseEntity<List<NoteVm>> getNotesByCategory(
-            @PathVariable Long categoryId
-    ) {
-        List<NoteVm> notesFromService = noteService.getNotesByCategoryId(categoryId);
-
-        return new ResponseEntity<>(notesFromService, HttpStatus.OK);
-    }
-
-    @GetMapping("/archived")
-    public ResponseEntity<List<NoteVm>> getArchivedNotes() {
-        List<NoteVm> notesFromService = noteService.getArchivedNotes();
-
-        return new ResponseEntity<>(notesFromService, HttpStatus.OK);
-    }
-
-    @GetMapping("/unarchived")
-    public ResponseEntity<List<NoteVm>> getUnarchivedNotes() {
-        List<NoteVm> notesFromService = noteService.getUnarchivedNotes();
 
         return new ResponseEntity<>(notesFromService, HttpStatus.OK);
     }

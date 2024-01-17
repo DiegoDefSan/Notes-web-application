@@ -59,42 +59,6 @@ public class NoteService implements INoteService {
     }
 
     @Override
-    public List<NoteVm> getNotesByCategoryId(Long categoryId) {
-
-        Category category = getCategoryById(categoryId);
-
-        List<Note> noteList = noteRepository.selectNotesByCategoryId(categoryId);
-
-        List<NoteVm> noteVmList = noteList.stream().map(
-                note -> modelMapper.map(note, NoteVm.class)
-        ).toList();
-
-        return noteVmList;
-    }
-
-    @Override
-    public List<NoteVm> getArchivedNotes() {
-        List<Note> noteList = noteRepository.selectArchivedNotes();
-
-        List<NoteVm> noteVmList = noteList.stream().map(
-                note -> modelMapper.map(note, NoteVm.class)
-        ).toList();
-
-        return noteVmList;
-    }
-
-    @Override
-    public List<NoteVm> getUnarchivedNotes() {
-        List<Note> noteList = noteRepository.selectUnarchivedNotes();
-
-        List<NoteVm> noteVmList = noteList.stream().map(
-                note -> modelMapper.map(note, NoteVm.class)
-        ).toList();
-
-        return noteVmList;
-    }
-
-    @Override
     public CreateNoteResponse createNote(CreateNoteRequest createNoteRequest) {
         Note noteToAdd = modelMapper.map(createNoteRequest, Note.class);
 
