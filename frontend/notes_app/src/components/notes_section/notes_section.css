@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.note-container #top-section h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 .note-container #top-section .note-options {
   min-width: 76px;
   height: 100%;

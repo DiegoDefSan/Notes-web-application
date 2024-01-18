@@ -1,10 +1,10 @@
 :root {
   --main-brown: #795547;
-  --main-dark-brown: #63453a;
+  --main-dark-brown: #533a31;
   --white-text: #ffffff;
   --light-gray: #F2EDEB;
   --dark-gray: #BDBDBD;
-  --red-forbidden: #e73333;
+  --grey-forbidden: #bbbbbb;
 }
 
 * {
